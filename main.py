@@ -1,11 +1,5 @@
-def generate_signal(price, moving_average):
-    if price > moving_average:
-        return "BUY"
-    elif price < moving_average:
-        return "WAIT"
-    else:
-        return "HOLD"
-    
+from strategy import generate_signal
+
 print("Robin Agent starting...")
 
 stock = input("Enter stock symbol: ")
