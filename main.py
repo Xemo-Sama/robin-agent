@@ -1,13 +1,15 @@
 print("Robin Agent starting...")
 
-stock = "AAPL"
-price = 255.00
-moving_average = 250.00
+stock = input("Enter stock symbol: ")
+price = float(input("Enter current price: "))
+moving_average = float(input("Enter moving average: "))
 
 if price > moving_average:
     signal = "BUY"
-else:
+elif price < moving_average:
     signal = "WAIT"
+else:
+    signal = "HOLD"
 
 print(f"Stock: {stock}")
 print(f"Price: ${price}")
