@@ -1,10 +1,11 @@
 def generate_signal(price, moving_average):
     if moving_average is None:
         return "NO DATA"
+    percentage_difference = (price - moving_average) / moving_average
     
-    if price > moving_average:
+    if percentage_difference >= 0.02:
         return "BUY"
-    elif price < moving_average:
+    elif percentage_difference <= -0.02:
         return "WAIT"
     else:
         return "HOLD"
@@ -16,3 +17,4 @@ def  calculate_moving_average(prices):
     total = sum(prices)
     average = total/len(prices)
     return average
+
